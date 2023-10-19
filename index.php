@@ -1,6 +1,6 @@
 <?php
 
-include('includes/header.php');
+include 'includes/header.php';
 require "config.php";
 
 ?>
@@ -75,23 +75,24 @@ require "config.php";
                 <div class="categories__slider owl-carousel">
                     <?php
 $products_query = "SELECT *from `products` as p inner join `category` as c  on p.category = c.id order by id desc ";
-$conn_query = mysqli_query($connection , $products_query);
-if(mysqli_num_rows($conn_query) > 0){
-             while($row = mysqli_fetch_assoc($conn_query)){
-?>
-                
+$conn_query = mysqli_query($connection, $products_query);
+if (mysqli_num_rows($conn_query) > 0) {
+    while ($row = mysqli_fetch_assoc($conn_query)) {
+        ?>
+
                  <div class="col-lg-3">
-                    <div class="categories__item set-bg" data-setbg="<?php echo  'admin-panel/images/' .$row['image']; ?>">
-                        <h5><a href="#"><?php echo $row['title']?></a></h5>
+                    <div class="categories__item set-bg" data-setbg="<?php echo 'admin-panel/images/' . $row['image']; ?>">
+                        <h5><a href="#"><?php echo $row['title'] ?></a></h5>
                     </div>
                 </div>
-  <?php              
-            }
-        }
-        
-                            ?>
-           
-       
+          <?php
+}
+}
+
+?>
+
+
+
     </section>
     <!-- Categories Section End -->
 
@@ -526,7 +527,6 @@ if(mysqli_num_rows($conn_query) > 0){
 
 <?php
 
-include('includes/footer.php');
-
+include 'includes/footer.php';
 
 ?>
